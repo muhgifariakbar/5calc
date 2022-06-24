@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <!-- Masthead-->
+    <!-- <header class="header-index2"> -->
+    <header class="header-index2">
+        <nav>
+            <div>
+                <!-- <a class="navbar" href="3.html">GAMEKU</a> -->
+                <img src="text2564.png" alt="" style="height: 150px;">
+            </div>
+        </nav>
+        <div>
+
+            <h1>Hitung Benchmark PC Kamu Sekarang!</h1>
+            <p>Hi <span id="nameuser">n/a</span>!, kami akan merekomendasikan game sesuai spesifikasi</p>
+            <p>PC kamu setelah menginput data dibawah ini.</p>
+
+        </div>
+
+    </header>
+
+    <!-- About Section-->
+    <!-- <section> -->
+
+
+    <div class="card2">
+        <div class="card">
+
+            <form action="" id="add-spec">
+                <p id="choose">MASUKAN SPESIFIKASI PC KAMU DIBAWAH INI :</p>
+                <br>
+                <label for="processor" id="choose">Processor : </label>
+                <select name="processor" id="processor">
+                    <optgroup label="intel">
+                        <option value="1">Intel_core i3-2300F</option>
+                        <option value="1">Intel_core i3-4650</option>
+                        <option value="1">Intel_core i3-6300K</option>
+                        <option value="2">Intel_core i5-2300U</option>
+                        <option value="2">Intel_core i5-3465</option>
+                        <option value="2">Intel_core i5-5500</option>
+                        <option value="2">Intel_core i5-7700K</option>
+                        <option value="2">Intel_core i5-10400F</option>
+                        <option value="3">Intel_core i7-7800F</option>
+                        <option value="3">Intel_core i7-9900K</option>
+                        <option value="3">Intel_core i7-10850</option>
+                        <option value="3">Intel_core i7-12900K</option>
+                    </optgroup>
+                    <optgroup label="amd">
+                        <option value="1">AMD_Ryzen 3-1200</option>
+                        <option value="1">AMD_Ryzen 3-2600</option>
+                        <option value="1">AMD_Ryzen 3-5600</option>
+                        <option value="2">AMD_Ryzen 5-1200</option>
+                        <option value="2">AMD_Ryzen 5-2600</option>
+                        <option value="2">AMD_Ryzen 5-5600</option>
+                        <option value="3">AMD_Ryzen 7-2300</option>
+                        <option value="3">AMD_Ryzen 7-4600</option>
+                        <option value="3">AMD_Ryzen 7-5950</option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <label for="motherboard" id="choose">Motherboard : </label>
+                <select name="motherboard" id="motherboard">
+                    <option value="1">A-320-M</option>
+                    <option value="1">A-410-M</option>
+                    <option value="1">A-520-M</option>
+                    <option value="2">B-450-M</option>
+                    <option value="2">B-550-M</option>
+                    <option value="2">B-560-M</option>
+                    <option value="3">X-270-M</option>
+                    <option value="3">X-490-M</option>
+                    <option value="3">X-590-M</option>
+                </select>
+                <br><br>
+                <label for="vga" id="choose">Graphic Card : </label>
+                <select name="vga" id="vga">
+                    <optgroup label="geforce">
+                        <option value="1">Gen5-GTX 550Ti</option>
+                        <option value="1">Gen6-GTX 660</option>
+                        <option value="1">Gen7-GTX 750 Ti</option>
+                        <option value="2">Gen9-GTX 970 Ti</option>
+                        <option value="2">Gen10-GTX 1080</option>
+                        <option value="2">Gen16-GTX 1660 Super</option>
+                        <option value="3">Gen20-RTX 2060</option>
+                        <option value="3">Gen30-RTX 3050</option>
+                    </optgroup>
+                    <optgroup label="radeon">
+                        <option value="1">HD-4400</option>
+                        <option value="1">HD-6600</option>
+                        <option value="2">R-5 240</option>
+                        <option value="2">R-7 450</option>
+                        <option value="3">RX-550</option>
+                        <option value="3">RX-6600</option>
+                    </optgroup>
+                </select>
+                <br><br>
+                <label for="ram" id="choose">Ram Storage : </label>
+                <select name="ram" id="ram">
+                    <option value="1">4GB</option>
+                    <option value="1">6GB</option>
+                    <option value="2">8GB</option>
+                    <option value="2">12GB</option>
+                    <option value="3">16GB</option>
+                    <option value="3">32GB</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Submit">
+                <input type="reset">
+                <br><br>
+                <div>
+                    <br><br>
+                    <h3> Benchmark : <span id="score">---</span></h3>
+                    <h3> Kategori : <span id="pcspec">---</span></h3>
+                </div>
+                <br><br>
+                <div>
+                    <h3>Rekomendasi Game : <br>
+                        <br>
+                        <span id="recomgame">---</span>
+                    </h3>
+                    <br>
+                    <h3><a class="navbar" href="index.html" style="text-decoration: none; color: aliceblue;">Back</a></h3>
+                    
+                </div>
+            </form>
+            <script src="index.js"></script>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- </section> -->
+
+
+
+</body>
+
+</html>

@@ -1,101 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <!-- SATUUU -->
+    <link rel="stylesheet" href="style.css"> 
+    <title>basic web</title>
 </head>
-
 <body>
-    <p>The optgroup tag is used to group related options in a drop-down list:</p>
-    <div>
-        <h3>total score : <span id="score">0</span></h3>
+    <!-- LIMAAAA -->
+    <div class="style3">
+        <!-- EMPAT -->
+        <div class="style1">
+            <h1> 5CALC - The Computer Specs Calculator</h1>
+            <p>Silahkan masukan nama dan email:</p>
+            <div id="style2">
+                <!-- DUAAA -->
+                <form action="" id="nameemail" id="style2">
+                    <input text="text" id="name" placeholder="nama">
+                    <input text="text" id="email" placeholder="e-mail">
+                    <!-- TIGAAA -->
+                    <input type="submit" value="Enter" style="align-items: center;">
+                </form>
+            </div>
+        </div>
     </div>
+    <script>
+        document.getElementById("nameemail").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            console.log(name);
+            localStorage.setItem('objectToPass', name);
 
-    <form action="" id="calculator">
-        <label for="processor">select your processor:</label>
-        <select name="processor" id="processor">
-            <optgroup label="INTEL">
-                <option value="i3">Intel_core i3-2300F</option>
-                <option value="i3">Intel_core i3-4650</option>
-                <option value="i3">Intel_core i3-6300K</option>
-                <option value="i5">Intel_core i5-2300U</option>
-                <option value="i5">Intel_core i5-3465</option>
-                <option value="i5">Intel_core i5-5500</option>
-                <option value="i5">Intel_core i5-7700K</option>
-                <option value="i5">Intel_core i5-10400F</option>
-                <option value="i7">Intel_core i7-7800F</option>
-                <option value="i7">Intel_core i7-9900K</option>
-                <option value="i7">Intel_core i7-10850</option>
-                <option value="i7">Intel_core i7-12900K</option>
-            </optgroup>
-            <optgroup label="AMD">
-                <option value="r3">AMD_Ryzen 3-1200</option>
-                <option value="r3">AMD_Ryzen 3-2600</option>
-                <option value="r3">AMD_Ryzen 3-5600</option>
-                <option value="r5">AMD_Ryzen 5-1200</option>
-                <option value="r5">AMD_Ryzen 5-2600</option>
-                <option value="r5">AMD_Ryzen 5-5600</option>
-                <option value="r7">AMD_Ryzen 7-2300</option>
-                <option value="r7">AMD_Ryzen 7-4600</option>
-                <option value="r7">AMD_Ryzen 7-5950</option>
-            </optgroup>
-        </select>
-        <br><br>
+            let email = document.getElementById("email").value;
+            console.log(email);
 
-        <label for="motherboard">select your processor:</label>
-        <select name="motherboard" id="motherboard">
-          <option value="a">A-320-M</option>
-          <option value="a">A-410-M</option>
-          <option value="a">A-520-M</option>
-          <option value="b">B-450-M</option>
-          <option value="b">B-550-M</option>
-          <option value="b">B-560-M</option>
-          <option value="x">X-270-M</option>
-          <option value="x">X-490-M</option>
-          <option value="x">X-590-M</option>
-        </select>
-        <br /><br />
-
-        <label for="vga">select your graphic card:</label>
-        <select name="vga" id="vga">
-          <optgroup label="Geforce">
-            <option value="5">Gen5-GTX 550Ti</option>
-            <option value="6">Gen6-GTX 660</option>
-            <option value="7">Gen7-GTX 750 Ti</option>
-            <option value="9">Gen9-GTX 970 Ti</option>
-            <option value="10">Gen10-GTX 1080</option>
-            <option value="16">Gen16-GTX 1660 Super</option>
-            <option value="20">Gen20-RTX 2060</option>
-            <option value="30">Gen30-RTX 3050</option>
-          </optgroup>
-          <optgroup label="Radeon">
-            <option value="hd">HD-4400</option>
-            <option value="hd">HD-6600</option>
-            <option value="r">R-5 240</option>
-            <option value="r">R-7 450</option>
-            <option value="rx">RX-550</option>
-            <option value="rx">RX-6600</option>
-          </optgroup>
-        </select>
-        <br /><br />
-
-        <label for="ram">select your ram storage:</label>
-        <select name="ram" id="ram">
-          <option value="4">4GB</option>
-          <option value="6">6GB</option>
-          <option value="8">8GB</option>
-          <option value="12">12GB</option>
-          <option value="16">16GB</option>
-          <option value="32">32GB</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-    <script src="index.js"></script>
+            if(name.length >= 2 && email.length >= 5) {//assuming min name 2 char (eg: Li, Al) & min email 5 char ('@' + '.com')
+                window.location.href = "index-2.html";
+            } else {
+                if(name.length < 2 && email.length >= 5) {
+                    alert("Please enter your name");  
+                } else if(name.length >= 2 && email.length < 5) {
+                    alert("Please enter your email");
+                } else {
+                    alert("Please enter your name & email first");
+                }
+            }
+        })
+    </script>
 </body>
-
 </html>

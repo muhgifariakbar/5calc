@@ -1,96 +1,94 @@
 
+let totalScore = 0;
 
-let processor = document.getElementById("processor")
-let motherboard = document.getElementById("motherboard")
-let vga = document.getElementById("vga")
-let ram = document.getElementById("ram")
-let resultScore = document.getElementById("score")
+let nameuser = document.getElementById("nameuser");
+nameuser.innerText = localStorage['objectToPass'];
+localStorage.removeItem('objectToPass');
 
-let totalScore = 0
+document.getElementById("add-spec").addEventListener("submit", function(e) {
+    e.preventDefault()
 
+    let selectp = document.getElementById("processor");
+    let valuep = selectp.options[selectp.selectedIndex].value;
+    let benchProcie =valuep *(Math.floor(Math.random() * (1000 - 800 + 1) ) + 800)
+    console.log(benchProcie);
 
-function calcProcie(e) { // processor
-    let value = e.target.value
-    let score = 0
+    let selectv = document.getElementById("vga");
+    let valuev = selectv.options[selectv.selectedIndex].value;
+    let benchVga =valuev *(Math.floor(Math.random() * (1000 - 800 + 1) ) + 800)
+    console.log(benchVga);
 
-    if (value === "i3") {
-        score += 1
-    } else if (value === "i5") {
-        score += 2
-    }else if (value === "i7") {
-        score += 3
-    }else if (value === "r3") {
-        score += 1
-    }else if (value === "r5") {
-        score += 2
-    }else if (value === "r7") {
-        score += 3
-    }
-    totalScore += score
-    resultScore.innerText = totalScore
-}
+    let selectm = document.getElementById("motherboard");
+    let valuem = selectm.options[selectm.selectedIndex].value;
+    let benchMobo =valuem *(Math.floor(Math.random() * (1000 - 800 + 1) ) + 800)
+    console.log(benchMobo);
 
-function calcMobo(e) { // motherboard
-    let value = e.target.value
-    let score = 0
+    let selectr = document.getElementById("ram");
+    let valuer = selectr.options[selectr.selectedIndex].value;
+    let benchRam =valuer *(Math.floor(Math.random() * (1000 - 800 + 1) ) + 800)
+    console.log(benchRam);
 
-    if (value == "a") {
-        score += 1
-    } else if (value == "b") {
-        score += 2
-    }else if (value == "x") {
-        score += 3
-    }
-    totalScore += score
-    resultScore.innerText = totalScore
-}
+    totalScore = Number(benchProcie) + Number(benchVga) + Number(benchMobo) + Number(benchRam);
+    
+    let resultScore = document.getElementById("score");
+    resultScore.innerText = totalScore;
 
-function calcGpu(e) { // vga
-    let value = e.target.value
-    let score = 0
+    let pcspec = document.getElementById("pcspec");
+    let recomgame = document.getElementById("recomgame");
 
-    if(isNaN(Number(value))) {
-        if (value == "hd") {
-            score += 1
-        } else  if (value == "r") {
-            score += 2
-        } else  if (value == "rx") {
-            score += 3
-        }
+    if(totalScore === 0) {
+        pcspec.innerText = "n/a";
+    } else if(totalScore >= 9750 ) {
+        pcspec.innerText = "high";
+        recomgame.innerText = 
+        "1. Forza Horizon 5\n2. Cyberpunk 2077\n3. Red Dead Redemption 2";
+    } else if (totalScore >= 6800) {
+        pcspec.innerText = "mid";
+        recomgame.innerText = 
+        "1. Dark Souls II\n2. The Elder Scrolls V: Skyrim\n3. Fallout 3";
     } else {
-        let gen = Number(value)
-        if( gen >= 5 && gen <= 7) {
-            score +=1
-        } else   if( gen >= 9 && gen <= 16) {
-            score +=2
-        } else   if( gen >= 17) {
-            score +=3
-        }
+        pcspec.innerText = "low";
+        pcspec.innerText = "low";
+        recomgame.innerText = 
+        "1. Minecraft\n2. Zuma\n3. Plants vs. Zombies";
     }
-    totalScore += score
-    resultScore.innerText = totalScore
-}
+    // if(totalScore === 0) {
+    //     pcspec.innerText = "n/a";
+    // } else if(totalScore <= 4) {
+    //     pcspec.innerText = "low";
+    //     recomgame.innerText = 
+    //     "1. Minecraft\n2. Zuma\n3. Plants vs. Zombies";
+    // } else if (totalScore <= 8) {
+    //     pcspec.innerText = "mid";
+    //     recomgame.innerText = 
+    //     "1. Dark Souls II\n2. The Elder Scrolls V: Skyrim\n3. Fallout 3";
+    // } else {
+    //     pcspec.innerText = "high";
+    //     recomgame.innerText = 
+    //     "1. Forza Horizon 5\n2. Cyberpunk 2077\n3. Red Dead Redemption 2";
+    // }
+})
 
+document.getElementById("processor").addEventListener("input", function(e) {
+    let processor = document.getElementById("processor");
+    processor.setAttribute("disabled", true);
+})
 
-function calcRam(e) { // ram
-    let value = e.target.value
-    let score = 0
+document.getElementById("vga").addEventListener("input", function(e) {
+    let vga = document.getElementById("vga");
+    vga.setAttribute("disabled", true);
+})
 
-    let storage = Number(value)
-    if(storage >= 16) {
-        score += 3
-    } else if (storage >= 8) {
-        score += 2
-    } else {
-        score += 1
-    }
-    totalScore += score
-    resultScore.innerText = totalScore
-}
+document.getElementById("motherboard").addEventListener("input", function(e) {
+    let motherboard = document.getElementById("motherboard");
+    motherboard.setAttribute("disabled", true);
+})
 
+document.getElementById("ram").addEventListener("input", function(e) {
+    let ram = document.getElementById("ram");
+    ram.setAttribute("disabled", true);
+})
 
-
-processor.addEventListener("input", calcProcie)
-motherboard.addEventListener("input", calcMobo)
-vga.addEventListener("input", calcGpu)
-ram.addEventListener("input", calcRam)
+document.getElementById("add-spec").addEventListener("reset", function(e) {
+    location.reload();
+})

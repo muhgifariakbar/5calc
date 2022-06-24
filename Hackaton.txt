@@ -1,0 +1,38 @@
+TEMA : Entertaiment
+
+app ===> rekomendasi game berdasarkan spek pc
+
+
+==== procie ====
+1. intel 
+	- < i3 low
+	- i5 mid
+	- i7 & i9 high
+2. amd
+	< ryzen 3 low
+	ryzen 5 mid
+	ryzen 7 & 9 high
+
+
+==== MotherBoard ===
+seri A low
+seri B mid
+seri X high
+
+
+=== VGA ===
+1. geForce
+	< gen 7 low
+	gen7 - gen 16 mid
+	RTX high
+2. AMD
+	radeon 6k series low
+	rx (satuan) mid
+	rx (ribuan) high
+
+=== RAM ===
+< 8 low
+8-16 mid
+> 16 high
+
+
